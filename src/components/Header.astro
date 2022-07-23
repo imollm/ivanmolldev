@@ -1,0 +1,21 @@
+---
+import Icons from "@components/Icons.astro";
+import Photo from "@components/Photo.astro";
+
+export interface Props {
+    title: string;
+    subtitle: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+<header class="relative flex flex-col items-center w-full bg-main border-b-2 border-black">
+    <div class="pt-8 pb-24">
+        <h1 class="font-roboto text-center text-3xl font-extrabold mb-3">{title}</h1>
+        <h3 class="font-work-sans text-center text-2xl">{subtitle}</h3>
+    </div>
+    <div class="absolute -bottom-16 w-32 rounded-full overflow-hidden border-2 border-black">
+        <!-- <Icons /> -->
+        <Photo />
+    </div>
+</header>
