@@ -1,11 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Nav from '@components/Nav.astro';
 import Header from '@components/Header.astro';
 
 const title = 'Ivan Moll';
 const subtitle = 'Software Engineer';
 ---
 
-<Layout title='Welcome to Astro.'>
-	<Header title={title} subtitle={subtitle} />
+<Layout title='Ivan Moll Dev'>
+	<Nav />
+	<!-- <Header title={title} subtitle={subtitle} /> -->
 </Layout>
