@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@profile/*": ["src/components/profile/*"],
+      "@icons/*": ["src/components/icons/*"],
+      "@layouts/*": ["src/layouts/*"],
     },
     "allowSyntheticDefaultImports": true
   }

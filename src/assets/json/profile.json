@@ -9,7 +9,36 @@
         "hardSkills": {
             "title": "Hard Skills",
             "subtitle": "",
-            "content": [],
+            "content": [
+                {
+                    "value": "Frontend",
+                    "icons": ["html", "css", "javascript"]
+                },
+                {
+                    "value": "Frontend frameworks/lib",
+                    "icons": ["react", "angular", "bootstrap", "tailwind", "sass"]
+                },
+                {
+                    "value": "Backend",
+                    "icons": ["php", "nodejs", "kotlin"]
+                },
+                {
+                    "value": "Backend frameworks/lib",
+                    "icons": ["laravel", "symfony", "express"]
+                },
+                {
+                    "value": "Storage sys",
+                    "icons": ["mysql", "postgres", "mongo"]
+                },
+                {
+                    "value": "Infrastructure",
+                    "icons": ["apache", "nginx", "docker"]
+                },
+                {
+                    "value": "Utilities",
+                    "icons": ["bash", "git", "github", "gitlab"]
+                }
+            ],
             "footer": ""
         },
         "softSkills": {

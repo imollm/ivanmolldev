@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./public/css/styles.css",
+    "build:css:watch": "tailwindcss -i ./src/assets/css/styles.css -o ./public/assets/css/styles.css --watch"
   },
   "devDependencies": {
     "@astrojs/react": "^0.4.2",
