@@ -15,6 +15,7 @@ module.exports = {
 				gray: 'rgb(24, 24, 24)'
 			},
 			fontFamily: {
+				'sans': ['Helvetica', 'Arial', 'sans-serif'],
 				'roboto': ['Roboto', 'sans-serif'],
 				'work-sans': ['WorkSans', 'sans-serif']
 			}

@@ -1,0 +1,27 @@
+---
+import Profile from '../../assets/json/profile'
+const { techs } = Profile.profile.hardSkills
+---
+
+<div>
+    {
+        techs.map(tech => {
+            return (
+            <div class="profile-icons-title font-bold italic">
+                { tech.value }
+            </div>
+            <ul class='profile-icons-container'>
+                {
+                    tech.icons.map(Icon => {
+                        return (
+                            <li class='profile-icons-wrapper'>
+                                <Icon />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            )
+        })
+    }
+</div>

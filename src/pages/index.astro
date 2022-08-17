@@ -1,10 +1,12 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Nav from '@components/Nav.astro';
-import Profile from '@profile/Profile';
+import Profile from '@profile/Profile.astro';
+import Education from './education.astro';
 ---
 
 <Layout title='Ivan Moll Dev'>
 	<Nav />
 	<Profile client:visible />
+	<Education client:visible />
 </Layout>
