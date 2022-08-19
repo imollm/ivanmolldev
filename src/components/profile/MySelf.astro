@@ -2,28 +2,25 @@
 import TogglerAngle from '@components/icons/TogglerAngle'
 import Profile from '../../assets/json/profile.js'
 
-const { title, subtitle, content, footer } = Profile.profile.mySelf
+const { title, subtitle, content } = Profile.profile.mySelf
 const mySelector = '#myself-component.profile-component'
 ---
 
-<div id="myself-component" class='profile-component bg-white rounded col-span-2 p-8 shadow-zinc-700'>
+<div id="myself-component" class='profile-component rounded col-span-2 p-8 bg-zinc-700'>
     <div class='flex flex-col text-2xl'>
         <div class='flex justify-between'>
-            <span>
+            <span class='text-neutral-300'>
                 {title}
             </span>
             <span class='flex items-center'>
                 <TogglerAngle elementToCloseSelector={mySelector} client:visible />
             </span>
         </div>
-        <span class='text-gray-400 text-sm italic'>
+        <span class='text-neutral-300 text-sm'>
             {subtitle}
         </span>
     </div>
-    <p class='my-5 content'>
+    <p class='my-5 content bg-white p-5 rounded shadow-lg'>
         {content}
-    </p>
-    <p class=''>
-        {footer}
     </p>
 </div>

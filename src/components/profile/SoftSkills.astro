@@ -6,27 +6,27 @@ const { softSkills } = Profile.profile
 const mySelector = '#softskills-component.profile-component'
 ---
 
-<div id='softskills-component' class='profile-component bg-white rounded p-8'>
+<div id='softskills-component' class='profile-component lg:col-auto col-span-2 flex flex-col bg-zinc-700 rounded p-8'>
     <div class='flex flex-col text-2xl'>
         <div class="flex justify-between">
-            <span>
+            <span class='text-neutral-300'>
                 {softSkills.title}
             </span>
             <span class='flex items-center'>
                 <TogglerAngle elementToCloseSelector={mySelector} client:visible />
             </span>
         </div>
-        <span class='text-gray-400 text-sm italic'>
+        <span class='text-neutral-300 text-sm'>
             {softSkills.subtitle}
         </span>
     </div>
-    <div class=''>
-        <ul class='list-disc'>
+    <div class='grow mt-5'>
+        <ul class='list-disc h-full grid grid-rows-auto p-5 bg-white rounded'>
             {
                 softSkills.content.map(item => {
                     return (
-                        <li class='pl-3 pt-3 leading-7'>
-                            <span class='font-bold italic'>{item.value}:</span>
+                        <li class='leading-7'>
+                            <span class='font-bold'>{item.value}:</span>
                             <span class='font-normal'> {item.description}</span>
                         </li>
                     )

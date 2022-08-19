@@ -7,17 +7,17 @@ const { hardSkills } = Profile.profile
 const mySelector = '#hardskills-component.profile-component'
 ---
 
-<div id='hardskills-component' class='profile-component bg-white rounded p-8'>
+<div id='hardskills-component' class='profile-component lg:col-auto col-span-2 bg-zinc-700 rounded p-8'>
     <div class='flex flex-col text-2xl'>
         <div class='flex justify-between'>
-            <span>
+            <span class='text-neutral-300'>
                 {hardSkills.title}
             </span>
             <span class='flex items-center'>
                 <TogglerAngle elementToCloseSelector={mySelector} client:visible />
             </span>
         </div>
-        <span class='text-gray-400 text-sm italic'>
+        <span class='text-neutral-300 text-sm'>
             {hardSkills.subtitle}
         </span>
     </div>

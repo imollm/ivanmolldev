@@ -23,6 +23,11 @@ import Bash from '@components/icons/Bash.astro'
 import Git from '@components/icons/Git.astro'
 import Github from '@components/icons/Github.astro'
 import Gitlab from '@components/icons/Gitlab.astro'
+import Uoc from '@components/icons/Uoc.astro'
+import Udemy from '@components/icons/Udemy.astro'
+import Salesforce from '@components/icons/Salesforce.astro'
+import HighSchool from '@components/icons/HighSchool.astro'
+import B2CDev from '@components/icons/B2CDev.astro'
 
 const Profile = {
     profile: {
@@ -30,9 +35,8 @@ const Profile = {
         subtitle: 'Software Engineer',
         mySelf: {
             title: 'My Self',
-            subtitle: 'What I think by myself',
-            content: 'I\'m a Software Engineer, my passion is developing and web technologies. I like learning new things every day, challenges and investigating new outlooks. I consider myself persevering, self-taught, tidy, resolute and also a person that likes working in a team.',
-            footer: 'Footer'
+            subtitle: 'What I think by myself 👨🏻‍💻',
+            content: 'I\'m a Software Engineer, my passion is developing and web technologies. I like learning new things every day, challenges and investigating new outlooks. I consider myself persevering, self-taught, tidy, resolute and also a person that likes working in a team.'
         },
         hardSkills: {
             title: 'Hard Skills',
@@ -48,7 +52,7 @@ const Profile = {
                 },
                 {
                     value: 'Backend',
-                    icons: [Php, Nodejs, Kotlin]
+                    icons: [Php, Nodejs, Kotlin, Salesforce]
                 },
                 {
                     value: 'Backend frameworks/lib',
@@ -66,8 +70,7 @@ const Profile = {
                     value: 'Utilities',
                     icons: [Vscode, Bash, Git, Github, Gitlab]
                 }
-            ],
-            footer: 'Footer'
+            ]
         },
         softSkills: {
             title: 'Soft Skills',
@@ -97,58 +100,106 @@ const Profile = {
                     value: 'Constant and independent learning',
                     description: 'I have the desire to constantly learn, I think it\'s essential to have the ability to learn about new technologies, programs and systems. Key to today\'s workplace.'
                 }
-            ],
-            footer: 'Footer'
+            ]
         }
     },
     education: {
         title: 'Education',
-        subtitle: 'What I studied in my career 👨🏻‍🎓',
-        studies: [
+        studies: {
+            title: 'Studies',
+            subtitle: 'What I\'ve studied in my career 👨🏻‍🎓',
+            items: [
+                {
+                    title: 'Bachelor\'s degree in Computer Engineering',
+                    center: 'Universitat Oberta de Catalunya',
+                    location: 'Barcelona - Remotly',
+                    fromTo: '2016 - 2022',
+                    description: 'Specialised in Software Engineering',
+                    Icon: Uoc,
+                    link: ''
+                },
+                {
+                    title: 'Higher Technical Certificate in Sys Admin',
+                    center: 'High School Joan Ramis i Ramis',
+                    location: 'Mahón Menorca - Balearic Islands',
+                    fromTo: '2007 - 2009',
+                    description: 'Specialised in Linux Servers and networking',
+                    Icon: HighSchool,
+                    link: 'https://drive.google.com/file/d/1DmbLHVwIGTmUie2cszr2z9uMRZXjz_BG/view?usp=sharing'
+                }
+            ],
+        },
+        licences: {
+            title: 'Licences',
+            subtitle: 'My certificates 📚',
+            items: [
+                {
+                    title: 'Salesforce B2C Commerce Cloud Developer.',
+                    center: 'Salesforce',
+                    location: '',
+                    fromTo: 'aug. 2022',
+                    description: 'Official certification for a B2C Commerce Cloud Developer',
+                    Icon: B2CDev,
+                    link: 'https://drive.google.com/file/d/18M4nsq9Pi0milNYHQfv1DTVF0u4EzRv-/view?usp=sharing'
+                },
+                {
+                    title: 'Master in PHP, SQL, POO, MVC, Laravel, Symfony, Wordpress.',
+                    center: 'Udemy',
+                    location: '',
+                    fromTo: 'sept. 2020',
+                    description: 'Worked with PHP ecosystem, learnt principal frameworks and the top CRM in the world.',
+                    Icon: Udemy,
+                    link: 'http://ude.my/UC-181f4326-553b-4856-8504-bb9db3b0096d'
+                },
+                {
+                    title: 'Master in Javascript, jQuery, Angular, MongoDB, TypeScript, NodeJS, MEAN.',
+                    center: 'Udemy',
+                    location: '',
+                    fromTo: 'jul. 2019',
+                    description: 'Full Stack Tech of JavaScript, worked with backend and frontend.',
+                    Icon: Udemy,
+                    link: 'http://ude.my/UC-0UJQ9NSY'
+                },
+                {
+                    title: 'Web development from zero to advanced.',
+                    center: 'Udemy',
+                    location: '',
+                    fromTo: 'sept. 2018',
+                    description: 'Design and develop a website from zero to advanced.',
+                    Icon: Udemy,
+                    link: 'http://ude.my/UC-CLZRXVIO'
+                }
+            ]
+        }
+    },
+    experience: {
+        title: 'Experience',
+        subtitle: 'I\'ve worked hard on all my roles 💪🏻',
+        jobs: [
             {
-                title: 'Bachelor\'s degree in Computer Engineering',
-                center: 'Universitat Oberta de Catalunya',
-                location: 'Barcelona - Remotly',
-                fromTo: '2016 - 2022',
-                description: 'Specialised in Software Engineering'
+                role: 'Full Stack Engineer',
+                company: 'OSF Digital',
+                howLong: 'sept. 2021 - actually · 1 year',
+                description: ''
             },
             {
-                title: 'Higher Technical Certificate in Sys Admin',
-                center: 'High School Joan Ramis i Ramis',
-                location: 'Mahón Menorca - Balearic Islands',
-                fromTo: '2007 - 2009',
-                description: 'Specialised in Linux Servers and networking'
-            }
-        ],
-        licences: [
-            {
-                title: 'Salesforce B2C Commerce Cloud Developer.',
-                center: 'Salesforce',
-                location: 'Salesforce',
-                fromTo: 'aug. 2022',
-                description: 'Official certification for a B2C Commerce Cloud Developer'
+                role: 'Full Stack Developer PHP & JS',
+                company: 'Ximdex Evolution',
+                howLong: 'nov. 2020 - ene. 2021 · 3 months',
+                description: ''
             },
             {
-                title: 'Master in PHP, SQL, POO, MVC, Laravel, Symfony, Wordpress.',
-                center: 'Udemy',
-                location: 'Udemy',
-                fromTo: 'sept. 2020',
-                description: 'Worked with PHP ecosystem, learnt principal frameworks and the top CRM in the world.'
+                role: 'Systems Administrator',
+                company: 'Top Markets',
+                howLong: 'apr. 2019 - nov. 2020 · 1 year 8 months',
+                description: ''
             },
             {
-                title: 'Master in Javascript, jQuery, Angular, MongoDB, TypeScript, NodeJS, MEAN.',
-                center: 'Udemy',
-                location: 'Udemy',
-                fromTo: 'jul. 2019',
-                description: 'Full Stack Tech of JavaScript, worked with backend and frontend.'
+                role: 'Software Developer',
+                company: 'Freelance',
+                howLong: 'aug. 2016 - nov. 2020 · 4 years 4 months',
+                description: ''
             },
-            {
-                title: 'Web development from zero to advanced.',
-                center: 'Udemy',
-                location: 'Udemy',
-                fromTo: 'sept. 2018',
-                description: 'Design and develop a website from zero to advanced. HTML5, CSS3 and JavaScript.'
-            }
         ]
     }
 }

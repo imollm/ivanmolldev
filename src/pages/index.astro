@@ -2,11 +2,15 @@
 import Layout from '@layouts/Layout.astro';
 import Nav from '@components/Nav.astro';
 import Profile from '@profile/Profile.astro';
-import Education from './education.astro';
+import Education from '@components/education/Education.astro';
+import Experience from '@components/experience/Experience.astro';
 ---
 
 <Layout title='Ivan Moll Dev'>
 	<Nav />
-	<Profile client:visible />
-	<Education client:visible />
+	<div class='flex flex-col pl-24'>
+		<Profile />
+		<Education />
+		<Experience />
+	</div>
 </Layout>

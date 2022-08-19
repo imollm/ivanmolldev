@@ -3,24 +3,24 @@ import Profile from '../../assets/json/profile'
 const { techs } = Profile.profile.hardSkills
 ---
 
-<div>
+<div class=''>
     {
         techs.map(tech => {
             return (
-            <div class="profile-icons-title font-bold italic">
-                { tech.value }
-            </div>
-            <ul class='profile-icons-container'>
-                {
-                    tech.icons.map(Icon => {
-                        return (
-                            <li class='profile-icons-wrapper'>
-                                <Icon />
-                            </li>
-                        )
-                    })
-                }
-            </ul>
+                <div class="profile-icons-title font-bold text-neutral-300">
+                    { tech.value }
+                </div>
+                <ul class='flex justify-start items-center xl:gap-9 gap-5 pt-4 border-b-2 border-neutral-300 pb-4'>
+                    {
+                        tech.icons.map(Icon => {
+                            return (
+                                <li class='profile-icons-wrapper bg-white rounded-full p-2'>
+                                    <Icon />
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             )
         })
     }

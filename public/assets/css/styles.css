@@ -563,14 +563,6 @@ video {
   padding-top: 15px;
 }
 
-.profile-icons-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 35px;
-  padding-top: 15px;
-}
-
 .profile-icons-wrapper {
   width: 50px;
   height: 50px;
@@ -585,7 +577,9 @@ video {
   height: 100%;
 }
 
-.profile-component.closed {
+.profile-component.closed,
+.education-component.closed,
+.jobs-component.closed {
   height: 100px;
   overflow: hidden;
 }
@@ -600,4 +594,17 @@ video {
 
 .profile-icons-wrapper svg:hover {
   transform: scale(1.2);
+}
+
+.edu-card .link {
+  display: none;
+}
+
+.edu-card:hover > .link {
+  display: block;
+}
+
+.education-icons-wrapper svg {
+  width: 150px;
+  height: auto;
 }
