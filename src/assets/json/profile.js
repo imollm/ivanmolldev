@@ -36,7 +36,7 @@ const Profile = {
         mySelf: {
             title: 'My Self',
             subtitle: 'What I think by myself 👨🏻‍💻',
-            content: 'I\'m a Software Engineer, my passion is developing and web technologies. I like learning new things every day, challenges and investigating new outlooks. I consider myself persevering, self-taught, tidy, resolute and also a person that likes working in a team.'
+            content: 'Hello World! 👋🏻, my name is Ivan Moll, I\'m from 📍 Menorca - Spain. I\'m a Software 👨🏻‍💻 Engineer, my passion is developing and web 🕸 technologies. I like learning new 🧑🏻‍🏫 things every day, challenges and investigating new outlooks. I consider myself persevering, self-taught, tidy, resolute and also a person that likes working in a team.'
         },
         hardSkills: {
             title: 'Hard Skills',
@@ -77,27 +77,27 @@ const Profile = {
             subtitle: 'How I went to the world 🌍',
             content: [
                 {
-                    value: 'Communication',
+                    value: 'Communication 📢',
                     description: 'I know that in the tech world the communication is fundamental, I have a good communications skills.'
                 },
                 {
-                    value: 'Professionalism',
+                    value: 'Professionalism 👨🏻‍💻',
                     description: 'Every time we have to be professional, I consider myself a professional doing the things on the best way.'
                 },
                 {
-                    value: 'Responsibility',
+                    value: 'Responsibility 📌',
                     description: 'I\'m very responsible about my work and also I take care of the different tasks that I have to do.'
                 },
                 {
-                    value: 'Teamwork skills',
+                    value: 'Teamwork skills 🧑‍🤝‍🧑🧑‍🤝‍🧑',
                     description: 'I\'m consider that I have a good teamwork skills, in this world I know that we constantly work with another members. I try to give my best to the others mates when they have a problem or something similar. It\'s a important point in a tech team.'
                 },
                 {
-                    value: 'Commitment',
+                    value: 'Commitment ☑️',
                     description: 'I\'m a very commitment person in my studies and also in my work. This means greater motivation, concentration, quality of work and, therefore, productivity.'
                 },
                 {
-                    value: 'Constant and independent learning',
+                    value: 'Constant and independent learning 📚',
                     description: 'I have the desire to constantly learn, I think it\'s essential to have the ability to learn about new technologies, programs and systems. Key to today\'s workplace.'
                 }
             ]
@@ -131,7 +131,7 @@ const Profile = {
         },
         licences: {
             title: 'Licences',
-            subtitle: 'My certificates 📚',
+            subtitle: 'My certificates 🔖',
             items: [
                 {
                     title: 'Salesforce B2C Commerce Cloud Developer.',
