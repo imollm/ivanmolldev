@@ -90,7 +90,7 @@ const Profile = {
                 },
                 {
                     value: 'Teamwork skills 🧑‍🤝‍🧑🧑‍🤝‍🧑',
-                    description: 'I\'m consider that I have a good teamwork skills, in this world I know that we constantly work with another members. I try to give my best to the others mates when they have a problem or something similar. It\'s a important point in a tech team.'
+                    description: 'I\'m consider that I have a good teamwork skills, in this world I know that we constantly work with another members. I try to give my best to the others mates when they have a problem or something similar. It\'s an important point in a tech team.'
                 },
                 {
                     value: 'Commitment ☑️',
@@ -173,32 +173,32 @@ const Profile = {
         }
     },
     experience: {
-        title: 'Experience',
+        title: 'Jobs',
         subtitle: 'I\'ve worked hard on all my roles 💪🏻',
         jobs: [
             {
                 role: 'Full Stack Engineer',
                 company: 'OSF Digital',
                 howLong: 'sept. 2021 - actually · 1 year',
-                description: ''
+                description: 'Develop an innovation project with SFCC technology, work on backend and frontend. Rebranding project of Mahou San Miguel, work with SFCC technology on backend and frontend.'
             },
             {
                 role: 'Full Stack Developer PHP & JS',
                 company: 'Ximdex Evolution',
                 howLong: 'nov. 2020 - ene. 2021 · 3 months',
-                description: ''
+                description: 'Develop educational frontend app with JavaScript. Maintenance of educational frontend app with Angular. Refactor and maintenance of a CMS with PHP.'
             },
             {
                 role: 'Systems Administrator',
                 company: 'Top Markets',
                 howLong: 'apr. 2019 - nov. 2020 · 1 year 8 months',
-                description: ''
+                description: 'I worked with Windows Server/Windows and networking ecosystems, configuring all the workstations in the domain and network nodes, also I setup/configured printers to work in network mode.'
             },
             {
                 role: 'Software Developer',
                 company: 'Freelance',
                 howLong: 'aug. 2016 - nov. 2020 · 4 years 4 months',
-                description: ''
+                description: 'Backend development with PHP and its frameworks Laravel and Symfony, also I worked with NodeJS and Express. Also I worked with databases like MySQL and MongoDB. Frontend development with HTML, CSS, Bootstrap, Vanilla JS, jQuery. Deployments following the philosophy CI/CD with GitHub Actions, also using a VPS Server with Docker.'
             },
         ]
     }
