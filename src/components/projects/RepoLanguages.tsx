@@ -1,42 +1,17 @@
-import { useEffect, useState } from "react"
+import { IRepositoryLanguage } from "src/models/RepositoriesResponse"
 
 interface Props {
-    languagesUrl: string
+    languages: Array<IRepositoryLanguage>
 }
 
-const RepoLanguages: React.FC = ({ languagesUrl }: Props) => {
-    const [languages, setLanguages] = useState([])
-
-    useEffect(() => {
-        getLanguages()
-    }, [])
-
-    const getLanguages = async () => {
-        try {
-            const response = await fetch(languagesUrl, {
-                method: 'GET',
-                headers: {
-                    accept: 'application/vnd.github+json',
-                }
-            })
-
-            setLanguages(await response.json())
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+const RepoLanguages: React.FC = ({ languages } : Props) => {
     return (
         <ul className='flex flex-wrap gap-2 mt-3'>
             {
-                languages &&
-                Object.keys(languages).map((language: string) => {
-                    const textColor = language.toLowerCase() === 'makefile' ? 'text-black' : 'text-white'
-                    const bgColor = `bg-${language.toLowerCase()}`
-                    
+                languages.map(({ id, name, color }) => {                    
                     return (
-                        <li key={language} className={`bg-zinc-100 rounded-full p-2 ${textColor} ${bgColor}`}>
-                            {language}
+                        <li key={id} className='bg-zinc-100 rounded-full p-2 text-white' style={{ backgroundColor: color}}>
+                            {name}
                         </li>
                     )
                 })

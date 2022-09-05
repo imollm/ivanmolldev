@@ -2,9 +2,11 @@
 import NavTop from "@components/NavTop.astro";
 import NavLinks from "@components/NavLinks.astro";
 import NavRRSS from "@components/NavRRSS.astro";
+import NavMblCloseBtn from "./nav/NavMblCloseBtn";
 ---
 
-<nav class="flex flex-col justify-between items-center top-0 left-0 bg-zinc-700 fixed h-full w-[100px] py-3">
+<nav class="sm:flex hidden flex-col justify-between items-center top-0 left-0 bg-zinc-700 fixed h-full sm:w-[100px] w-full sm:py-3 py-10">
+    <NavMblCloseBtn client:load />
     <NavTop />
     <NavLinks />
     <NavRRSS />

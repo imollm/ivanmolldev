@@ -1,27 +1,18 @@
 import GitHubIcon from './GitHubIcon'
+import { IRepository } from '../../models/RepositoriesResponse'
 import RepoLanguages from './RepoLanguages'
 
-interface Repository {
-    name: string
-    html_url: string
-    updated_at: string
-    watchers: number
-    language: string
-    topics: [],
-    private: boolean
-    description: string,
-    languages_url: string
-}
-
 interface Props {
-    repository: Repository
+    repository: IRepository
 }
 
-const RepositoryCard: React.FC = ({ repository }: Props) => {
+const RepositoryCard: React.FC = ({ repository } : Props) => {
+    const { name, description, url, isPrivate, languages } = repository
+
     return (
-        !repository.private &&
+        !isPrivate &&
             <a className='repo-details-wrapper'
-                href={repository.html_url}
+                href={url}
                 target='_blank'
             >
                 <article className='repo-card h-full flex flex-col leading-10 rounded overflow-hidden shadow-lg bg-white p-4'>
@@ -31,7 +22,9 @@ const RepositoryCard: React.FC = ({ repository }: Props) => {
                         </div>
                         <div className='mt-5 text-center'>
                             <span className='text-lg text-zinc-500 font-bold capitalize'>
-                                { repository.name.replaceAll('-', ' ') }
+                                {
+                                    name.replaceAll('-', ' ')
+                                }
                             </span>
                         </div>
                     </div>
@@ -40,10 +33,10 @@ const RepositoryCard: React.FC = ({ repository }: Props) => {
                     <div className='flex flex-col justify-evenly p-3'>
                         <div className='flex flex-col gap-1 rounded bg-zinc-100 p-2'>
                             <span className='font-bold'>Description:</span>
-                            <span>{ repository.description }</span>
+                            <span>{ description }</span>
                         </div>
                         <div>
-                            <RepoLanguages languagesUrl={repository.languages_url} />
+                            <RepoLanguages languages={languages.nodes} />
                         </div>
                     </div>
                 </div>

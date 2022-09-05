@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#personal-info li::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    border: 1px solid white;
-    width: 100%;
-}
-
 .profile-icons-title {
     padding-top: 15px;
 }

@@ -1,32 +1,56 @@
 import Profile from '../../assets/json/profile.js'
 import TogglerAngle from '@components/icons/TogglerAngle'
 import RepositoryCard from '@components/projects/RepositoryCard'
+import { RepositoriesGraphQLResponse } from 'src/models/RepositoriesResponse'
 import { useEffect, useState } from 'react'
 
-const Repositories: React.FC = () => {
+const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
     const { title, subtitle } = Profile.projects
     const mySelector: string = '#projects-component.repostiories-component'
-    const gitHubAPIToken: string = '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'
-    const endpoint: string = 'https://api.github.com/user/repos'
-    const [repositories, setRespositories] = useState([])
+    const graphQLQuery =
+        `query {
+            viewer {
+              repositories(first: 100) {
+                totalCount
+                nodes {
+                    name
+                    id
+                    isPrivate
+                    url
+                    description
+                    languages(first: 10) {
+                        nodes {
+                            color
+                            name
+                            id
+                        }
+                    }
+                }
+              }
+            }
+          }`
+    const endpoint: string = 'https://api.github.com/graphql'
+    const [repositories, setRepositories] = useState<RepositoriesGraphQLResponse>()
 
     useEffect(() => {
-        getRepositories()
+        getRepositories<RepositoriesGraphQLResponse>().then(repos => setRepositories(repos))
     }, [])
 
-    const getRepositories = async () => {
+    async function getRepositories<T>(): Promise<T> {
         try {
             const response = await fetch(endpoint, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
-                    accept: 'application/vnd.github+json',
-                    authorization: `token ${gitHubAPIToken}`
-                }
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    query: graphQLQuery
+                })
             })
-
-            setRespositories(await response.json())
+            return await response.json()
         } catch (error) {
-            console.log(error)
+            throw new TypeError(error)
         }
     }
 
@@ -41,18 +65,17 @@ const Repositories: React.FC = () => {
                         <TogglerAngle elementToCloseSelector={mySelector} />
                     </span>
                 </div>
-                <span className='text-gray-400 text-sm text-neutral-300'>
+                <span className='text-gray-400 text-sm'>
                     {subtitle}
                 </span>
             </div>
             <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-auto lg:grid-rows-1 grid-rows-2 gap-4 mt-5'>
                 {
-                    repositories &&
-                        repositories.map(repository => {
-                            return (
-                                <RepositoryCard key={repository.id} repository={repository} />
-                            )
-                        })
+                    repositories && repositories?.data?.viewer.repositories.nodes.map(repo => {
+                        return (
+                            <RepositoryCard key={repo.id} repository={repo} />
+                        )
+                    })
                 }
             </div>
         </section>

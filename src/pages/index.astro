@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Nav from '@components/Nav.astro';
+import NavMblOpenBtn from '../components/nav/NavMblOpenBtn';
 import Profile from '@profile/Profile.astro';
 import Education from '@components/education/Education.astro';
 import Experience from '@components/experience/Experience.astro';
@@ -8,8 +9,9 @@ import Projects from '@components/projects/Projects.astro';
 ---
 
 <Layout title='Ivan Moll Dev'>
+	<NavMblOpenBtn client:load />
 	<Nav />
-	<div class='flex flex-col pl-24'>
+	<div class='flex flex-col sm:pl-24 pl-0'>
 		<Profile />
 		<Education />
 		<Experience />
