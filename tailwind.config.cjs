@@ -6,13 +6,21 @@ module.exports = {
 			backgroundImage: {
 				'body-grad': "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)"
 			},
-			colors: {
-				main: '#FFC300',
-				secondary: '#FF5733',
-				third: '#C72738',
-				fourth: '#901A3D',
-				five: '#571845',
-				gray: 'rgb(24, 24, 24)'
+			backgroundColor: {
+				'html': '#E44D26',
+				'css': '#1572B6',
+				'javascript': '#F7DF1B',
+				'php': '#6181B6',
+				'docker': '#009BC6',
+				'dockerfile': '#009BC6',
+				'shell': '#2A3137',
+				'typescript': '#007ACC',
+				'sass': '#CB6599',
+				'kotlin': '#7F6DB0',
+				'makefile': '#FFF',
+				'blade': '#FD4F30',
+				'astro': '#FF5D01',
+				'twig': '#BACF29'
 			},
 			fontFamily: {
 				'sans': ['Helvetica', 'Arial', 'sans-serif'],

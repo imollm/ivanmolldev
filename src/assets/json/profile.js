@@ -201,6 +201,10 @@ const Profile = {
                 description: 'Backend development with PHP and its frameworks Laravel and Symfony, also I worked with NodeJS and Express. Also I worked with databases like MySQL and MongoDB. Frontend development with HTML, CSS, Bootstrap, Vanilla JS, jQuery. Deployments following the philosophy CI/CD with GitHub Actions, also using a VPS Server with Docker.'
             },
         ]
+    },
+    projects: {
+        title: 'Repositories',
+        subtitle: 'Projects that I\'ve developed by myself 📝'
     }
 }
 
