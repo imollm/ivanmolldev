@@ -6,6 +6,7 @@ const NavMblOpenBtn: React.FC = () => {
 			if (className === 'hidden') {
 				navClassNames.remove('hidden')
 				navClassNames.add('flex')
+				navClassNames.add('z-10')
 				document.querySelector('body').classList.add('overflow-hidden')
 			}
 		})

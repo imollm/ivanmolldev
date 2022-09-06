@@ -6,6 +6,7 @@ import Profile from '@profile/Profile.astro';
 import Education from '@components/education/Education.astro';
 import Experience from '@components/experience/Experience.astro';
 import Projects from '@components/projects/Projects.astro';
+import GoTopBtn from '@components/GoTopBtn'
 ---
 
 <Layout title='Ivan Moll Dev'>
@@ -17,4 +18,5 @@ import Projects from '@components/projects/Projects.astro';
 		<Experience />
 		<Projects />
 	</div>
+	<GoTopBtn client:visible />
 </Layout>
