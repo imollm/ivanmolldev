@@ -55,7 +55,7 @@ const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
     }
 
     return (
-        <section id='projects-component' className='repostiories-component bg-zinc-700 rounded p-8'>
+        <div id='projects-component' className='repostiories-component bg-zinc-700 rounded p-8'>
             <div className='flex flex-col text-2xl'>
                 <div className='flex justify-between'>
                     <span className='text-neutral-300'>
@@ -78,7 +78,7 @@ const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
                     })
                 }
             </div>
-        </section>
+        </div>
     )
 }
 
