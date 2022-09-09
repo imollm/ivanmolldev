@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.profile-icons-title {
+    padding-top: 15px;
+}
+
+.profile-icons-wrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.angle-down-icon {
+    width: 17px;
+    cursor: pointer;
+}
+
+.profile-component {
+    height: 100%;
+}
+
+.profile-component.closed,
+.education-component.closed,
+.jobs-component.closed,
+.repostiories-component.closed {
+    height: 100px;
+    overflow: hidden;
+}
+
+.angle-down-icon-wrapper.closed {
+    transform: rotate(90deg);
+}
+
+.profile-icons-wrapper svg {
+    transition: all .2s ease-in-out;
+}
+
+.profile-icons-wrapper svg:hover {
+    transform: scale(1.2);
+}
+
+.edu-card .link {
+    display: none;
+}
+
+.edu-card:hover > .link {
+    display: block;
+}
+
+.education-icons-wrapper svg {
+    width: 150px;
+    height: auto;
+}
+
+.repo-details-wrapper {
+    margin: 0;
+    width: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.repo-details {
+    position: absolute;
+    bottom: 0;
+    height: 0%;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 100%;
+}
+
+.repo-details-wrapper:hover > .repo-details {
+    height: 100%;
+}

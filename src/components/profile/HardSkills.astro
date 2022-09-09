@@ -1,0 +1,25 @@
+---
+import Profile from '../../assets/json/profile.js'
+import HardSkillsIcons from '@components/profile/HardSkillsIcons.astro'
+import TogglerAngle from '@components/icons/TogglerAngle';
+
+const { hardSkills } = Profile.profile
+const mySelector = '#hardskills-component.profile-component'
+---
+
+<div id='hardskills-component' class='profile-component lg:col-auto col-span-2 bg-zinc-700 rounded p-8'>
+    <div class='flex flex-col text-2xl'>
+        <div class='flex justify-between'>
+            <span class='text-neutral-300'>
+                {hardSkills.title}
+            </span>
+            <span class='flex items-center'>
+                <TogglerAngle elementToCloseSelector={mySelector} client:visible />
+            </span>
+        </div>
+        <span class='text-neutral-300 text-sm'>
+            {hardSkills.subtitle}
+        </span>
+    </div>
+    <HardSkillsIcons />
+</div>

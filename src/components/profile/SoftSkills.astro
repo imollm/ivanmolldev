@@ -1,0 +1,37 @@
+---
+import Profile from '../../assets/json/profile.js'
+import TogglerAngle from '@components/icons/TogglerAngle'
+
+const { softSkills } = Profile.profile
+const mySelector = '#softskills-component.profile-component'
+---
+
+<div id='softskills-component' class='profile-component lg:col-auto col-span-2 flex flex-col bg-zinc-700 rounded p-8'>
+    <div class='flex flex-col text-2xl'>
+        <div class="flex justify-between">
+            <span class='text-neutral-300'>
+                {softSkills.title}
+            </span>
+            <span class='flex items-center'>
+                <TogglerAngle elementToCloseSelector={mySelector} client:visible />
+            </span>
+        </div>
+        <span class='text-neutral-300 text-sm'>
+            {softSkills.subtitle}
+        </span>
+    </div>
+    <div class='grow mt-5'>
+        <ul class='list-disc h-full grid grid-rows-auto p-5 bg-white rounded'>
+            {
+                softSkills.content.map(item => {
+                    return (
+                        <li class='leading-7 list-none'>
+                            <span class='font-bold'>{item.value}:</span>
+                            <span class='font-normal'> {item.description}</span>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    </div>
+</div>

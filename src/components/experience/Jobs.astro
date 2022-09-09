@@ -1,0 +1,31 @@
+---
+import Profile from '../../assets/json/profile.js'
+import TogglerAngle from '@components/icons/TogglerAngle'
+import JobCard from '@components/experience/JobCard.astro'
+const { title, subtitle, jobs } = Profile.experience
+const mySelector = '#experience-component.jobs-component'
+---
+<section id='experience-component' class='jobs-component bg-zinc-700 rounded p-8'>
+    <div class='flex flex-col text-2xl'>
+        <div class='flex justify-between'>
+            <span class='text-neutral-300'>
+                {title}
+            </span>
+            <span class='flex items-center'>
+                <TogglerAngle elementToCloseSelector={mySelector} client:visible />
+            </span>
+        </div>
+        <span class='text-gray-400 text-sm text-neutral-300'>
+            {subtitle}
+        </span>
+    </div>
+    <div class='grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-auto grid-rows-2 gap-4 mt-5'>
+        {
+            jobs.map(study => {
+                return (
+                    <JobCard data={study} client:visible/>
+                )
+            })
+        }
+    </div>
+</section>
