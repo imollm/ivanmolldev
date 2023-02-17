@@ -1,18 +1,13 @@
 ---
+import CardHeader from '@components/CardHeader.astro';
 import Profile from '../../assets/json/profile.js'
 
 const { softSkills } = Profile.profile
+const { title, subtitle } = Profile.profile.softSkills
 ---
 
 <div id='softskills-component' class='profile-component lg:col-auto col-span-2 flex flex-col bg-zinc-700 rounded p-8'>
-    <div class='flex flex-col text-2xl'>
-        <span class='text-neutral-300'>
-            {softSkills.title}
-        </span>
-        <span class='text-neutral-300 text-sm'>
-            {softSkills.subtitle}
-        </span>
-    </div>
+    <CardHeader title={title} subtitle={subtitle} client:visible />
     <div class='grow mt-5'>
         <ul class='list-disc h-full grid grid-rows-auto p-5 bg-white rounded'>
             {

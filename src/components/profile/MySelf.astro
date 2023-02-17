@@ -1,18 +1,12 @@
 ---
+import CardHeader from '@components/CardHeader.astro';
 import Profile from '../../assets/json/profile.js'
 
 const { title, subtitle, content } = Profile.profile.mySelf
 ---
 
 <div id="myself-component" class='profile-component rounded col-span-2 p-8 bg-zinc-700'>
-    <div class='flex flex-col text-2xl'>
-        <span class='text-neutral-300'>
-            {title}
-        </span>
-        <span class='text-neutral-300 text-sm'>
-            {subtitle}
-        </span>
-    </div>
+    <CardHeader title={title} subtitle={subtitle} client:visible />
     <p class='my-5 content bg-white p-5 rounded shadow-lg leading-7'>
         {content}
     </p>
