@@ -2,14 +2,13 @@
 import Profile from '../../assets/json/profile.js'
 import EducationCard from '@components/education/EducationCard.astro'
 const { title, subtitle, items } = Profile.education.licences
-const mySelector = '#licences-component.education-component'
 ---
 <div id='licences-component' class='education-component bg-zinc-700 rounded p-8'>
     <div class='flex flex-col text-2xl'>
         <span class='text-neutral-300'>
             {title}
         </span>
-        <span class='text-gray-400 text-sm text-neutral-300'>
+        <span class='text-gray-400 text-sm'>
             {subtitle}
         </span>
     </div>

@@ -2,14 +2,13 @@
 import Profile from '../../assets/json/profile.js'
 import JobCard from '@components/experience/JobCard.astro'
 const { title, subtitle, jobs } = Profile.experience
-const mySelector = '#experience-component.jobs-component'
 ---
 <section id='experience-component' class='jobs-component bg-zinc-700 rounded p-8'>
     <div class='flex flex-col text-2xl'>
         <span class='text-neutral-300'>
             {title}
         </span>
-        <span class='text-gray-400 text-sm text-neutral-300'>
+        <span class='text-gray-400 text-sm'>
             {subtitle}
         </span>
     </div>
