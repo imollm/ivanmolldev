@@ -1,12 +1,10 @@
 import Profile from '../../assets/json/profile.js'
-import TogglerAngle from '@components/icons/TogglerAngle'
 import RepositoryCard from '@components/projects/RepositoryCard'
 import { RepositoriesGraphQLResponse } from 'src/models/RepositoriesResponse'
 import { useEffect, useState } from 'react'
 
 const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
     const { title, subtitle } = Profile.projects
-    const mySelector: string = '#projects-component.repostiories-component'
     const graphQLQuery =
         `query {
             viewer {
@@ -57,14 +55,9 @@ const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
     return (
         <div id='projects-component' className='repostiories-component bg-zinc-700 rounded p-8'>
             <div className='flex flex-col text-2xl'>
-                <div className='flex justify-between'>
-                    <span className='text-neutral-300'>
-                        {title}
-                    </span>
-                    <span className='flex items-center'>
-                        <TogglerAngle elementToCloseSelector={mySelector} />
-                    </span>
-                </div>
+                <span className='text-neutral-300'>
+                    {title}
+                </span>
                 <span className='text-gray-400 text-sm'>
                     {subtitle}
                 </span>
