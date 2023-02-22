@@ -16,7 +16,6 @@ export interface Repository {
     owner: Owner;
     name: string;
     id: string;
-    isPrivate: boolean;
     url: string;
     description?: any;
     languages: Languages;

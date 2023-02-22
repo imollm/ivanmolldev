@@ -13,7 +13,6 @@ export async function getRepositories({ token }): Promise<RepositoriesGraphQLRes
                   }
                   name
                   id
-                  isPrivate
                   url
                   description
                   homepageUrl
