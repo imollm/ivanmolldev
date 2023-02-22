@@ -5,12 +5,12 @@ import CardHeader from '@components/CardHeader.astro';
 const { title, subtitle, items } = Profile.education.studies
 ---
 <section id='studies-component' class='education-component bg-zinc-700 rounded p-8'>
-    <CardHeader title={title} subtitle={subtitle} client:visible />
+    <CardHeader title={title} subtitle={subtitle} />
     <div class='grid lg:grid-cols-2 lg:grid-rows-1 grid-cols-auto grid-rows-2 gap-4 mt-5'>
         {
             items.map(study => {
                 return (
-                    <EducationCard data={study} client:visible/>
+                    <EducationCard data={study} />
                 )
             })
         }

@@ -6,7 +6,7 @@ const { title, subtitle, content } = Profile.profile.mySelf
 ---
 
 <div id="myself-component" class='profile-component rounded col-span-2 p-8 bg-zinc-700'>
-    <CardHeader title={title} subtitle={subtitle} client:visible />
+    <CardHeader title={title} subtitle={subtitle} />
     <p class='my-5 content bg-white p-5 rounded shadow-lg leading-7'>
         {content}
     </p>
