@@ -1,6 +1,6 @@
 ---
 import Profile from '../../assets/json/profile.js'
-import RepositoryCard from './RepositoryCard.astro'
+import RepositoryCard from '@components/projects/RepositoryCard.astro'
 import { getRepositories } from 'src/services/index.js'
 const { title, subtitle } = Profile.projects
 const token = import.meta.env.GITHUB_TOKEN
@@ -19,7 +19,7 @@ const repositories = await getRepositories({ token })
         {
             repositories && repositories?.data?.search?.nodes.map(repo => {
                 return (
-                    <RepositoryCard key={repo.id} repository={repo} />
+                    <RepositoryCard repository={repo} />
                 )
             })
         }
