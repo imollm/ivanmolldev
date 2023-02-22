@@ -1,9 +1,9 @@
 import GitHubIcon from './GitHubIcon'
-import { IRepository } from '../../models/RepositoriesResponse'
+import { Repository } from '../../models/RepositoriesResponse'
 import RepoLanguages from './RepoLanguages'
 
 interface Props {
-    repository: IRepository
+    repository: Repository
 }
 
 const RepositoryCard: React.FC = ({ repository } : Props) => {

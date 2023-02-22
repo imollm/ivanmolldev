@@ -1,56 +1,10 @@
 import Profile from '../../assets/json/profile.js'
 import RepositoryCard from '@components/projects/RepositoryCard'
-import { RepositoriesGraphQLResponse } from 'src/models/RepositoriesResponse'
-import { useEffect, useState } from 'react'
+import useRespositories from 'src/hooks/useRepositories.js'
 
 const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
     const { title, subtitle } = Profile.projects
-    const graphQLQuery =
-        `query {
-            viewer {
-              repositories(first: 100) {
-                totalCount
-                nodes {
-                    name
-                    id
-                    isPrivate
-                    url
-                    description
-                    languages(first: 10) {
-                        nodes {
-                            color
-                            name
-                            id
-                        }
-                    }
-                }
-              }
-            }
-          }`
-    const endpoint: string = 'https://api.github.com/graphql'
-    const [repositories, setRepositories] = useState<RepositoriesGraphQLResponse>()
-
-    useEffect(() => {
-        getRepositories<RepositoriesGraphQLResponse>().then(repos => setRepositories(repos))
-    }, [])
-
-    async function getRepositories<T>(): Promise<T> {
-        try {
-            const response = await fetch(endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    query: graphQLQuery
-                })
-            })
-            return await response.json()
-        } catch (error) {
-            throw new TypeError(error)
-        }
-    }
+    const repositories = useRespositories({ token })
 
     return (
         <div id='projects-component' className='repostiories-component bg-zinc-700 rounded p-8'>
@@ -64,7 +18,7 @@ const Repositories: React.FC = ({ token }: ImportMetaEnv) => {
             </div>
             <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-auto lg:grid-rows-1 grid-rows-2 gap-4 mt-5'>
                 {
-                    repositories && repositories?.data?.viewer.repositories.nodes.map(repo => {
+                    repositories && repositories?.data?.search?.nodes.map(repo => {
                         return (
                             <RepositoryCard key={repo.id} repository={repo} />
                         )
