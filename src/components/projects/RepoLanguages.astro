@@ -1,0 +1,15 @@
+---
+import { Languages } from "src/models/RepositoriesResponse"
+const { languages }: Languages = Astro.props 
+---
+<ul class='flex flex-wrap gap-2 mt-3'>
+    {
+        languages.map(({ id, name, color }) => {                    
+            return (
+                <li key={id} class='bg-zinc-100 rounded-full p-2 text-white' style={{ backgroundColor: color}}>
+                    {name}
+                </li>
+            )
+        })
+    }
+</ul>

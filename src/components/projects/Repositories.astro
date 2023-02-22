@@ -1,0 +1,27 @@
+---
+import Profile from '../../assets/json/profile.js'
+import RepositoryCard from './RepositoryCard.astro'
+import { getRepositories } from 'src/services/index.js'
+const { title, subtitle } = Profile.projects
+const token = import.meta.env.GITHUB_TOKEN
+const repositories = await getRepositories({ token })
+---
+<div id='projects-component' class='repostiories-component bg-zinc-700 rounded p-8'>
+    <div class='flex flex-col text-2xl'>
+        <span class='text-neutral-300'>
+            {title}
+        </span>
+        <span class='text-gray-400 text-sm'>
+            {subtitle}
+        </span>
+    </div>
+    <div class='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-auto lg:grid-rows-1 grid-rows-2 gap-4 mt-5'>
+        {
+            repositories && repositories?.data?.search?.nodes.map(repo => {
+                return (
+                    <RepositoryCard key={repo.id} repository={repo} />
+                )
+            })
+        }
+    </div>
+</div>

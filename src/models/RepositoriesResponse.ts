@@ -2,13 +2,13 @@ interface Owner {
     login: string;
 }
 
-interface Language {
+export interface Language {
     color: string;
     name: string;
     id: string;
 }
 
-interface Languages {
+export interface Languages {
     nodes: Language[];
 }
 
