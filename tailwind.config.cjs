@@ -26,6 +26,15 @@ module.exports = {
 				'sans': ['Helvetica', 'Arial', 'sans-serif'],
 				'roboto': ['Roboto', 'sans-serif'],
 				'work-sans': ['WorkSans', 'sans-serif']
+			},
+			animation: {
+				bigger: 'bigger .3s ease-in-out'
+			},
+			keyframes: {
+				bigger: {
+					from: { transform: 'scale(1)' },
+					to: { transform: 'scale(1.1)' }
+				}
 			}
 		},
 		screens: {

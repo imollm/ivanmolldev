@@ -9,7 +9,7 @@ export interface Language {
 }
 
 export interface Languages {
-    nodes: Language[];
+    languages: Language[];
 }
 
 export interface Repository {
